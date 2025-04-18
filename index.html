@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神魔之塔工具</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/compare.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">神魔之塔工具</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav>
+            <a href="#" class="active">首頁</a>
+            <a href="#">字串比對</a>
+            <a href="#">符石轉變</a>
+        </nav>
+    </header>
+
+    <!---home section--->
+
+    <section class="home">
+        <div class="home-detail">
+            <div class="h1">歡迎！</div>
+            <div class="h2">使用
+                <span style="--i:4;" data-text="神">神</span>
+                <span style="--i:3;" data-text="魔">魔</span>
+                <span style="--i:2;" data-text="之">之</span>
+                <span style="--i:1;" data-text="塔">塔</span>
+                工具！
+            </div>
+            <p>本網站將會提供【字串比對】及【符石面板轉變】工具。</p>
+            <div class="btn-sci">
+                <a href="#" class="btn">下載</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-youtube' ></i></a>
+                    <a href="#"><i class='bx bxl-discord-alt' ></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="images/14rgb.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--字串 section-->
+    <section class="text-tt">
+        <h2 class="heading">字串比對</h2>
+        <div class="fs">
+            <label for="oldSel">locale.bytes檔案（舊）：</label>
+            <input accept=".production" id="oldSel" type="file">
+        </div>
+        <div class="fs">
+            <label for="newSel">locale.bytes檔案（新）：</label>
+            <input accept=".production" id="newSel" type="file">
+        </div>
+        <div>
+            <div><button disabled id="startButton">比對差異</button></div>
+            <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>key<th>舊內容<th>新內容
+                        <tbody id=translations>
+        </table>
+        </div>
+        <script src="/js/text-tt/text-tt.js"></script>
+    </section>
+
+    <!--符石 section-->
+    <section class="rune active">
+        <h2 class="heading">符石轉變</h2>
+        <div class="rune-detail">
+            <div class="column">
+                <label for="boardB64">輸入界面編碼：</label>
+                        &nbsp;<input type="text" id="boardB64">
+                        &nbsp;<button class="button" onclick="decodeBoard()">解 碼</button>
+                        <p><br>
+                            例子：<br>
+                            AAEBAAYFA8GkkkECusmkugEBhJLJhAIA<br>
+                            AAEBAAYFGMGkkkEXusmkugEWhJLJhAIA<br>
+                            AAECAAYF/////wMbAxcDFgMYAxoDGQMYAxYDFwMbAwA=
+                        </p>
+                    </div>
+                    <div class="column">
+                        <table id="result"></table>
+                    </div>
+                </div>
+                <script src="/js/rune/rune.js"></script>
+    </section>
+    <script src="/js/index.js"></script>
+</body>
+</html>
